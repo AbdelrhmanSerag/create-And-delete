@@ -5,7 +5,6 @@
         <!-- <div class="routers"> -->
             <router-link class="router" to="/login" >Login</router-link>
             <router-link class="router" to="/sign-up" >Sign Up</router-link>
-            <router-view/>
         <!-- </div> -->
     </div>
     </div>
