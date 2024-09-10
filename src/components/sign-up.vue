@@ -10,10 +10,9 @@
             <br><br>
             <input type="checkbox"  id="admin" class="admin" v-model="Admin">
             <label for="admin" class="admin">Are you admin</label><br><br>
-            <router-link to="/userPage">
-            <input type="submit" class="btn-signForm" placeholder="submit" @click="submit">
+            <router-link >
+            <input type="submit" class="btn-signForm" placeholder="submit" @click="(submit)">
             </router-link>
-            <!-- <router-view/> -->
             </form>
         </div>
     </div>
@@ -41,16 +40,12 @@ import { reactive, ref } from 'vue';
         users.push(person)
         
         localStorage.setItem('users', JSON.stringify(users) )
+        if(person.admin == true){
+          location.pathname = '/adminPage'
+        }else{
+          location.pathname = '/userPage'
+        }
       }
-      // console.log(users);
-
-
-
-
-
-
-
-
 </script>
 
 <style  scoped>
