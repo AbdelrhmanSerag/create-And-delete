@@ -2,9 +2,7 @@
     <div class="body">
         <div class="stickyCart">
             <div class="cart">
-              <button class="button">My cart</button>
-               <!-- <router-link to="/cart" class="button">My Cart</router-link>
-               <router-view/> -->
+               <router-link to="/cart" class="button">My Cart</router-link>
             </div>
             <div class="items">
                 <product class="pro"/>
