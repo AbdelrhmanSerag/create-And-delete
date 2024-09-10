@@ -21,24 +21,27 @@
     </div>
     </template>
     
-    <script setup>
-      import { RouterLink } from 'vue-router';
-    import { reactive, ref } from 'vue';
+     <script setup>
+    import { RouterLink } from 'vue-router';
+    import { ref } from 'vue';
     
     const username = ref('');
     const password = ref('');
     
-    function hello() {
-  const storedUsers = JSON.parse(localStorage.getItem("users"));
+    function checkUsers() {
+      const storedUsers = JSON.parse(localStorage.getItem("users"));
 
-  for (let i = 0; i < storedUsers.length; i++) {
-    if (password.value === storedUsers[i].password) {
-      if (username.value === storedUsers[i].name) {
-        console.log(`Hello ${username.value}`)
+      for (let i = 0; i < storedUsers.length; i++) {
+        if (password.value === storedUsers[i].password) {
+          if (username.value === storedUsers[i].name) {
+            if(storedUsers[i].admin == true){
+              location.pathname = '/adminPage'
+            }
+          }
+        }
       }
+
     }
-  }
-}
 
     
     </script>
